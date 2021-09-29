@@ -67,7 +67,7 @@ public class UserModel {
     public void setMobileNumber(String mobileNumber) {
         this.mobileNumber = mobileNumber;
     }
-    public void setActive(Bolean active) {
+    public void setActive(Boolean active) {
         this.active = active;
     }
     public void setRole(String role) {
