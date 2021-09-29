@@ -53,25 +53,25 @@ public class OrderModel {
         return this.price;
     }
     
-    public setOrderId(String orderId) {
+    public void setOrderId(String orderId) {
         this.orderId = orderId;
     }
-    public setUserId(String userId) {
+    public void setUserId(String userId) {
        this.userId = userId;
     }
-    public setProductName(String productName) {
+    public void setProductName(String productName) {
         this.productName = productName;
     }
-    public setQuantity(int quantity) {
+    public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-    public setTotalPrice(String totalPrice) {
+    public void setTotalPrice(String totalPrice) {
         this.totalPrice = totalPrice;
     }
-    public setStatus(String status) {
+    public void setStatus(String status) {
         this.status = status;
     }
-    public setPrice(String price) {
+    public void setPrice(String price) {
         this.price = price;
     }
     
