@@ -1,8 +1,5 @@
 package com.examly.springapp.model;
 
-import org.springframework.stereotype.Service;
-
-@Service
 public class ProductModel {
     private String productId;
     private String imageURL;
