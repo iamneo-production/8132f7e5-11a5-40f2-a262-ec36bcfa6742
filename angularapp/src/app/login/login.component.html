@@ -1,0 +1,48 @@
+<div class="bootstrap-wrapper">
+    <div class="container margin-top">
+        <div class ="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="container text-centre">
+
+                    <img 
+                    class="image-fluid" 
+                    style="width: 200px" 
+                    src="/assets/login_logo.jpg" 
+                    alt=""
+                    />
+
+                </div>
+
+                <h1 class="text-centre"> Please Login below </h1>
+
+                <!-- Creating the login form starts here-->
+
+                <form id="loginBox">
+
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input type="email" id="email" matInput/>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Passwordl</mat-label>
+                        <input type="password" id="password" matInput/>
+                    </mat-form-field>
+
+                    <div class="container text-centre">
+
+                        <button type="submit" mat-raised-button color="accent" id="submitbutton"> Login </button>
+                        <span><a style="margin-left: 20px;" mat-icon-button routerLink="/signup" id="signupLink"> New User?clickhere </a></span>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
