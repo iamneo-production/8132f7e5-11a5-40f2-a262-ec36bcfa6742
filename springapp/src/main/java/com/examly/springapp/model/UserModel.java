@@ -10,7 +10,7 @@ public class UserModel {
     //private CartModel cart;
     //private List<OrderModel> orderList;
 
-    UserModel() {
+    public UserModel() {
         this.email = "";
         this.password = "";
         this.userName = "";
@@ -21,7 +21,7 @@ public class UserModel {
         //this.orderList = new List<OrderModel>();
     }
     
-    UserModel(String email, String password, String userName, String mobileNumber, Boolean active, String role) {
+    public UserModel(String email, String password, String userName, String mobileNumber, Boolean active, String role) {
         this.email = email;
         this.password = password;
         this.userName = userName;

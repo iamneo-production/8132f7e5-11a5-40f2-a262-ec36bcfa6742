@@ -8,7 +8,7 @@ public class ProductModel {
     private String description;
     private String quantity;
 
-    ProductModel() {
+    public ProductModel() {
         this.productId = "";
         this.imageURL = "";
         this.productName = "";
@@ -16,7 +16,7 @@ public class ProductModel {
         this.description = "";
         this.quantity = "";
     }
-    ProductModel(String productId, String imageURL, String productName, String price, String description, String quantity) {
+    public ProductModel(String productId, String imageURL, String productName, String price, String description, String quantity) {
         this.productId = productId;
         this.imageURL = imageURL;
         this.productName = productName;

@@ -9,7 +9,7 @@ public class OrderModel {
     private String status;
     private String price;
     
-    OrderModel() {
+    public OrderModel() {
         this.orderId = "";
         this.userId = "";
         this.productName = "";
@@ -18,7 +18,7 @@ public class OrderModel {
         this.status = "";
         this.price = "";
     }
-    OrderModel(String orderId, String userId, String productName, int quantity, String totalPrice, String status, String price) {
+    public OrderModel(String orderId, String userId, String productName, int quantity, String totalPrice, String status, String price) {
         this.orderId = orderId;
         this.userId = userId;
         this.productName = productName;

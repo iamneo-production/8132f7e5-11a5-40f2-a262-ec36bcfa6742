@@ -4,11 +4,11 @@ public class LoginModel {
     private String email;
     private String password;
 
-    LoginModel() {
+    public LoginModel() {
         this.email = "";
         this.password = "";
     }
-    LoginModel(String email, String password) {
+    public LoginModel(String email, String password) {
         this.email = email;
         this.password = password;
     }

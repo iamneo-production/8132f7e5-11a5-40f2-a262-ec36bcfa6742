@@ -7,14 +7,14 @@ public class CartModel {
     private int quantity;
     private String price;
 
-    CartModel() {
+    public CartModel() {
         this.cartId = "";
         this.userId = "";
         this.productName = "";
         this.quantity = 0;
         this.price = "";
     }
-    CartModel(String cartId, String userId, String productName, int quantity, String price) {
+    public CartModel(String cartId, String userId, String productName, int quantity, String price) {
         this.cartId = cartId;
         this.userId = userId;
         this.productName = productName;
