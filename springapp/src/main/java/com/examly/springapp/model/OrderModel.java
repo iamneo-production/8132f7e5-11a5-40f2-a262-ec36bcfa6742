@@ -23,12 +23,12 @@ public class OrderModel {
     }
     OrderModel(String orderId, String userId, String productName, int quantity, String totalPrice, String status, String price) {
         this.orderId = orderId;
-        this.userId = "";
-        this.productName = "";
-        this.quantity = 0;
-        this.totalPrice = "";
-        this.status = "";
-        this.price = "";
+        this.userId = userId;
+        this.productName = productName;
+        this.quantity = quantity;
+        this.totalPrice = totalPrice;
+        this.status = status;
+        this.price = price;
     }
 
     public String getOrderId() {
