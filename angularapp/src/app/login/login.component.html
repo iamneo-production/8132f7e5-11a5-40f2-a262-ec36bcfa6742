@@ -1,8 +1,8 @@
 <div class="bootstrap-wrapper">
-    <div class="container margin-top">
+    <div class="container text-center margin-top">
         <div class ="row">
             <div class="col-md-6 offset-md-3">
-                <div class="container text-centre">
+                <div class="container text-center">
 
                     <img 
                     class="image-fluid" 
@@ -13,7 +13,7 @@
 
                 </div>
 
-                <h1 class="text-centre"> Please Login below </h1>
+                <h1 class="text-center"> Please Login below </h1>
 
                 <!-- Creating the login form starts here-->
 
@@ -25,15 +25,16 @@
                     </mat-form-field>
 
                     <mat-form-field class="full-width" appearance="outline">
-                        <mat-label>Passwordl</mat-label>
+                        <mat-label>Password</mat-label>
                         <input type="password" id="password" matInput/>
                     </mat-form-field>
 
-                    <div class="container text-centre">
-
+                    <div class="container text-center">
                         <button type="submit" mat-raised-button color="accent" id="submitbutton"> Login </button>
-                        <span><a style="margin-left: 20px;" mat-icon-button routerLink="/signup" id="signupLink"> New User?clickhere </a></span>
+                    </div>
 
+                    <div class="container text-center">
+                        <span><a mat-icon-button routerLink="/signup" id="signupLink"> New User?clickhere </a></span>
                     </div>
 
                 </form>
