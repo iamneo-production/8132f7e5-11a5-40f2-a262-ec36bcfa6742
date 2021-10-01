@@ -1,5 +1,12 @@
 package com.examly.springapp.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.examly.springapp.model.CartModel;
+import com.examly.springapp.model.OrderModel; 
+
+
 public class UserModel {
     private String email;
     private String password;
@@ -7,8 +14,8 @@ public class UserModel {
     private String mobileNumber;
     private Boolean active;
     private String role;
-    //private CartModel cart;
-    //private List<OrderModel> orderList;
+    private CartModel cart;
+    private List<OrderModel> orderList;
 
     public UserModel() {
         this.email = "";
@@ -17,8 +24,8 @@ public class UserModel {
         this.mobileNumber = "";
         this.active = false;
         this.role = "";
-        //this.cart = new CartModel();
-        //this.orderList = new List<OrderModel>();
+        this.cart = new CartModel();
+        this.orderList = new ArrayList<OrderModel>();
     }
     
     public UserModel(String email, String password, String userName, String mobileNumber, Boolean active, String role) {
@@ -28,8 +35,8 @@ public class UserModel {
         this.mobileNumber = mobileNumber;
         this.active = active;
         this.role = role;
-        //this.cart = cart;
-        //this.orderList = orderList;
+        this.cart = new CartModel();
+        this.orderList = new ArrayList<OrderModel>();
     }
 
     public String getEmail() {

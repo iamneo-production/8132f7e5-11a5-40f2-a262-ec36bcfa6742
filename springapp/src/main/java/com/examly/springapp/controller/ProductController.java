@@ -12,7 +12,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 public class ProductController {
-
+    
+    @GetMapping("/home")
+    public List<ProductModel> getHomeProduct() {
+        List<ProductModel> productList = new ArrayList<ProductModel>();
+        productList.add(new ProductModel("String productId", "String imageURL", "String productName", "String price", "String description", "String quantity"));
+        return productList;
+    }
+    
     @GetMapping("/admin")
     public List<ProductModel> getProduct() {
         List<ProductModel> productList = new ArrayList<ProductModel>();
@@ -20,11 +27,14 @@ public class ProductController {
         return productList;
     }
 
-    @GetMapping("/home")
-    public List<ProductModel> getHomeProduct() {
-        List<ProductModel> productList = new ArrayList<ProductModel>();
-        productList.add(new ProductModel("String productId", "String imageURL", "String productName", "String price", "String description", "String quantity"));
-        return productList;
+    @PostMapping("/admin/addProduct")
+    public String productSave(@RequestBody ProductModel data) {
+        return "new product saved.";
+    }
+    
+    @GetMapping("/admin/delete/{id}")
+    public String productDelete(@PathVariable String id) {
+        return "deleted";
     }
 
     @GetMapping("/admin/productEdit/{id}")
@@ -37,13 +47,4 @@ public class ProductController {
         return "existing product edit saved.";
     }
 
-    @PostMapping("/admin/addProduct")
-    public String productSave(@RequestBody ProductModel data) {
-        return "new product saved.";
-    }
-
-    @GetMapping("/admin/delete/{id}")
-    public String productDelete(@PathVariable String id) {
-        return "deleted";
-    }
 }
