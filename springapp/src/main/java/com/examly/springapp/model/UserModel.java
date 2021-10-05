@@ -1,12 +1,8 @@
 package com.examly.springapp.model;
 
-import java.util.ArrayList;
-import java.util.List;
+import org.springframework.stereotype.Service;
 
-import com.examly.springapp.model.CartModel;
-import com.examly.springapp.model.OrderModel; 
-
-
+@Service
 public class UserModel {
     private String email;
     private String password;
@@ -14,8 +10,6 @@ public class UserModel {
     private String mobileNumber;
     private Boolean active;
     private String role;
-    private CartModel cart;
-    private List<OrderModel> orderList;
 
     public UserModel() {
         this.email = "";
@@ -24,8 +18,6 @@ public class UserModel {
         this.mobileNumber = "";
         this.active = false;
         this.role = "";
-        this.cart = new CartModel();
-        this.orderList = new ArrayList<OrderModel>();
     }
     
     public UserModel(String email, String password, String userName, String mobileNumber, Boolean active, String role) {
@@ -35,8 +27,6 @@ public class UserModel {
         this.mobileNumber = mobileNumber;
         this.active = active;
         this.role = role;
-        this.cart = new CartModel();
-        this.orderList = new ArrayList<OrderModel>();
     }
 
     public String getEmail() {
@@ -57,10 +47,6 @@ public class UserModel {
     public String getRole() {
         return this.role;
     }
-    /*
-        cart()
-        orderList()
-    */
     
     public void setEmail(String email) {
         this.email = email;
@@ -80,8 +66,4 @@ public class UserModel {
     public void setRole(String role) {
         this.role = role;
     }
-    /*
-        cart()
-        orderList()
-    */
 }

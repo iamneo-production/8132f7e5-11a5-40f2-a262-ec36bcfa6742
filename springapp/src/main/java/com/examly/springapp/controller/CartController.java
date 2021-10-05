@@ -1,9 +1,9 @@
 package com.examly.springapp.controller;
 
-import com.examly.springapp.model.CartModel;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.ArrayList;
+import com.examly.springapp.model.CartModel;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,10 +1,13 @@
 package com.examly.springapp.model;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class OrderModel {
     private String orderId;
     private String userId;
     private String productName;
-    private int quantity;
+    private String quantity;
     private String totalPrice;
     private String status;
     private String price;
@@ -13,12 +16,12 @@ public class OrderModel {
         this.orderId = "";
         this.userId = "";
         this.productName = "";
-        this.quantity = 0;
+        this.quantity = "";
         this.totalPrice = "";
         this.status = "";
         this.price = "";
     }
-    public OrderModel(String orderId, String userId, String productName, int quantity, String totalPrice, String status, String price) {
+    public OrderModel(String orderId, String userId, String productName, String quantity, String totalPrice, String status, String price) {
         this.orderId = orderId;
         this.userId = userId;
         this.productName = productName;
@@ -37,7 +40,7 @@ public class OrderModel {
     public String getProductName() {
         return this.productName;
     }
-    public int getQuantity() {
+    public String getQuantity() {
         return this.quantity;
     }
     public String getTotalPrice() {
@@ -59,7 +62,7 @@ public class OrderModel {
     public void setProductName(String productName) {
         this.productName = productName;
     }
-    public void setQuantity(int quantity) {
+    public void setQuantity(String quantity) {
         this.quantity = quantity;
     }
     public void setTotalPrice(String totalPrice) {
