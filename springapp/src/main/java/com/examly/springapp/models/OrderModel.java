@@ -1,34 +1,30 @@
-package com.examly.springapp.model;
+package com.examly.springapp.models;
 
-import org.springframework.stereotype.Service;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
-@Service
+@Entity
 public class OrderModel {
+    @Id
     private String orderId;
     private String userId;
-    private String productName;
+    private String productId;
     private String quantity;
-    private String totalPrice;
     private String status;
-    private String price;
     
     public OrderModel() {
         this.orderId = "";
         this.userId = "";
-        this.productName = "";
+        this.productId = "";
         this.quantity = "";
-        this.totalPrice = "";
         this.status = "";
-        this.price = "";
     }
-    public OrderModel(String orderId, String userId, String productName, String quantity, String totalPrice, String status, String price) {
+    public OrderModel(String orderId, String userId, String productId, String quantity, String status) {
         this.orderId = orderId;
         this.userId = userId;
-        this.productName = productName;
+        this.productId = productId;
         this.quantity = quantity;
-        this.totalPrice = totalPrice;
         this.status = status;
-        this.price = price;
     }
 
     public String getOrderId() {
@@ -37,20 +33,14 @@ public class OrderModel {
     public String getUserId() {
         return this.userId;
     }
-    public String getProductName() {
-        return this.productName;
+    public String getProductId() {
+        return this.productId;
     }
     public String getQuantity() {
         return this.quantity;
     }
-    public String getTotalPrice() {
-        return this.totalPrice;
-    }
     public String getStatus() {
         return this.status;
-    }
-    public String getPrice() {
-        return this.price;
     }
     
     public void setOrderId(String orderId) {
@@ -59,20 +49,13 @@ public class OrderModel {
     public void setUserId(String userId) {
        this.userId = userId;
     }
-    public void setProductName(String productName) {
-        this.productName = productName;
+    public void setProductId(String productId) {
+        this.productId = productId;
     }
     public void setQuantity(String quantity) {
         this.quantity = quantity;
     }
-    public void setTotalPrice(String totalPrice) {
-        this.totalPrice = totalPrice;
-    }
     public void setStatus(String status) {
         this.status = status;
     }
-    public void setPrice(String price) {
-        this.price = price;
-    }
-    
 }

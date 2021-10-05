@@ -1,6 +1,7 @@
-package com.examly.springapp.controller;
+package com.examly.springapp.controllers;
 
-import com.examly.springapp.model.LoginModel;
+import com.examly.springapp.models.LoginModel;
+
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PostMapping;
 

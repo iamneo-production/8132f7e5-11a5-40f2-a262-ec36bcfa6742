@@ -1,8 +1,8 @@
-package com.examly.springapp.model;
+package com.examly.springapp.models;
 
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
-@Service
+@Component
 public class LoginModel {
     private String email;
     private String password;

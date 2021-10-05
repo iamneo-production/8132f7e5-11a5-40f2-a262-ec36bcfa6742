@@ -1,9 +1,11 @@
-package com.examly.springapp.model;
+package com.examly.springapp.models;
 
-import org.springframework.stereotype.Service;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
-@Service
+@Entity
 public class ProductModel {
+    @Id
     private String productId;
     private String imageURL;
     private String productName;

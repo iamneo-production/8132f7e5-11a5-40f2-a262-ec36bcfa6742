@@ -1,8 +1,10 @@
-package com.examly.springapp.controller;
+package com.examly.springapp.controllers;
 
 import java.util.List;
 import java.util.ArrayList;
-import com.examly.springapp.model.OrderModel;
+
+import com.examly.springapp.models.OrderModel;
+
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.GetMapping;

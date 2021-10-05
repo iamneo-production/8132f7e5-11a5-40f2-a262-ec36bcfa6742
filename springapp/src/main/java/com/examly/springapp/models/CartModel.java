@@ -1,28 +1,27 @@
-package com.examly.springapp.model;
+package com.examly.springapp.models;
 
-import org.springframework.stereotype.Service;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
-@Service
+@Entity
 public class CartModel {
+    @Id
     private String cartId;
     private String userId;
     private String productName;
     private String quantity;
-    private String price;
 
     public CartModel() {
         this.cartId = "";
         this.userId = "";
         this.productName = "";
         this.quantity = "";
-        this.price = "";
     }
-    public CartModel(String cartId, String userId, String productName, String quantity, String price) {
+    public CartModel(String cartId, String userId, String productName, String quantity) {
         this.cartId = cartId;
         this.userId = userId;
         this.productName = productName;
         this.quantity = quantity;
-        this.price = price;
     }
 
     public String getCartId() {
@@ -37,9 +36,6 @@ public class CartModel {
     public String getQuantity() {
         return this.quantity;
     }
-    public String getPrice() {
-        return this.price;
-    }
     
     public void setCartId(String cartId) {
         this.cartId = cartId;
@@ -52,9 +48,6 @@ public class CartModel {
     }
     public void setQuantity(String quantity) {
         this.quantity = quantity;
-    }
-    public void setPrice(String price) {
-        this.price = price;
     }
     
 }
