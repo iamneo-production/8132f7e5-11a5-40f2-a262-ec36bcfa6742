@@ -68,4 +68,12 @@ public class UserModel {
     public void setRole(String role) {
         this.role = role;
     }
+
+    public boolean isNull() {
+        if(this.email == "" || this.password == "" || this.userName == "" || this.mobileNumber == "" || this.active == false || this.role == "") {
+            return true;
+        }
+
+        return false;
+    }
 }
