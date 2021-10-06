@@ -31,7 +31,7 @@ public class UserService {
         return userRepository.findById(id).get();
     }
 
-    public List<UserModel> getAllUser() {
+    public List<UserModel> getAllUsers() {
         List<UserModel> users = new ArrayList<>();
         userRepository.findAll().forEach(users::add);
         return users;
