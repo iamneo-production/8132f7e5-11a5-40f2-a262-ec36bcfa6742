@@ -36,4 +36,10 @@ public class ProductService {
         productRepository.findAll().forEach(products::add);
         return products;
     }
+
+    public void updateProductById(String id, ProductModel data) {
+        productRepository.updateProductById(id, data);
+    }
+
 }
+

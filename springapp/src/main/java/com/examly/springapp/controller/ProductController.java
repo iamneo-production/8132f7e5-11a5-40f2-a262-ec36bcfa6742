@@ -43,25 +43,30 @@ public class ProductController {
     @GetMapping("/admin/delete/{id}")
     public String productDelete(@PathVariable String id) {
         // delete the product with id - id
-        productService.deleteProductById(id);
-        return "deleted";
+        if(productService.checkProductById(id)) {
+            productService.deleteProductById(id);
+            return "Deleted";
+        }
+        return "Invalid request";
     }
 
     @GetMapping("/admin/productEdit/{id}")
     public ProductModel productEditData(@PathVariable String id) {
         // get the product details with id - id
-        return productService.getProductById(id);
+        if(productService.checkProductById(id)) {
+            return productService.getProductById(id);
+        }
+        return new ProductModel();
     }
 
     @PostMapping("/admin/productEdit/{id}")
     public String productEditSave(@RequestBody ProductModel data, @PathVariable String id) {
         // save the product with id - id
-        /**
-         * 
-         * 
-         * 
-         */
-        return "existing product edit saved.";
+        if(productService.checkProductById(id)) {
+            productService.updateProductById(id, data);
+            return "existing product updated.";
+        }
+        return "Invalid request";
     }
 
 }
