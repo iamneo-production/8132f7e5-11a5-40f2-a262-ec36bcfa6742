@@ -18,8 +18,10 @@ public class SignupController {
     public Boolean saveUser(@RequestBody UserModel user) {
         if(user.isNull()){
             return false;
+        } else if(userService.checkUserById(user.getEmail())) {
+            userService.addNewUser(user);
+            return true;
         }
-        userService.addNewUser(user);
-        return true;
+        return false;
     }
 }
