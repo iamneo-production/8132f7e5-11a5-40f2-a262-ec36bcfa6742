@@ -1,10 +1,10 @@
-package com.examly.springapp.services;
+package com.examly.springapp.service;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.examly.springapp.repositories.CartRepository;
-import com.examly.springapp.models.CartModel;
+import com.examly.springapp.repository.CartRepository;
+import com.examly.springapp.model.CartModel;
 
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;

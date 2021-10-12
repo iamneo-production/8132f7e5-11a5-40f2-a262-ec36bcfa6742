@@ -1,10 +1,10 @@
-package com.examly.springapp.services;
+package com.examly.springapp.service;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.examly.springapp.repositories.UserRepository;
-import com.examly.springapp.models.UserModel;
+import com.examly.springapp.repository.UserRepository;
+import com.examly.springapp.model.UserModel;
 
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,6 +1,6 @@
-package com.examly.springapp.repositories;
+package com.examly.springapp.repository;
 
-import com.examly.springapp.models.UserModel;
+import com.examly.springapp.model.UserModel;
 
 import org.springframework.data.repository.CrudRepository;
 

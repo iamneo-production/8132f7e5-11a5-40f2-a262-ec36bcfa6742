@@ -1,10 +1,10 @@
-package com.examly.springapp.services;
+package com.examly.springapp.service;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.examly.springapp.repositories.OrderRepository;
-import com.examly.springapp.models.OrderModel;
+import com.examly.springapp.repository.OrderRepository;
+import com.examly.springapp.model.OrderModel;
 
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;

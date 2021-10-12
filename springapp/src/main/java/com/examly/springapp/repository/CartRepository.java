@@ -1,6 +1,6 @@
-package com.examly.springapp.repositories;
+package com.examly.springapp.repository;
 
-import com.examly.springapp.models.CartModel;
+import com.examly.springapp.model.CartModel;
 
 import org.springframework.data.repository.CrudRepository;
 

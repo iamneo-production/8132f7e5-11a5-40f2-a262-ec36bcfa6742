@@ -1,10 +1,10 @@
-package com.examly.springapp.controllers;
+package com.examly.springapp.controller;
 
 import java.util.List;
 import java.util.ArrayList;
 
-import com.examly.springapp.models.ProductModel;
-import com.examly.springapp.services.ProductService;
+import com.examly.springapp.model.ProductModel;
+import com.examly.springapp.service.ProductService;
 
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PostMapping;

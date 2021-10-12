@@ -1,6 +1,6 @@
-package com.examly.springapp.repositories;
+package com.examly.springapp.repository;
 
-import com.examly.springapp.models.OrderModel;
+import com.examly.springapp.model.OrderModel;
 
 import org.springframework.data.repository.CrudRepository;
 

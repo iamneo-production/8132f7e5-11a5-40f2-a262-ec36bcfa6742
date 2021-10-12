@@ -1,4 +1,4 @@
-package com.examly.springapp.models;
+package com.examly.springapp.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -8,19 +8,19 @@ public class CartModel {
     @Id
     private String cartId;
     private String userId;
-    private String productName;
+    private String productId;
     private String quantity;
 
     public CartModel() {
         this.cartId = "";
         this.userId = "";
-        this.productName = "";
+        this.productId = "";
         this.quantity = "";
     }
-    public CartModel(String cartId, String userId, String productName, String quantity) {
+    public CartModel(String cartId, String userId, String productId, String quantity) {
         this.cartId = cartId;
         this.userId = userId;
-        this.productName = productName;
+        this.productId = productId;
         this.quantity = quantity;
     }
 
@@ -30,8 +30,8 @@ public class CartModel {
     public String getUserId() {
         return this.userId;
     }
-    public String getProductName() {
-        return this.productName;
+    public String getProductId() {
+        return this.productId;
     }
     public String getQuantity() {
         return this.quantity;
@@ -43,8 +43,8 @@ public class CartModel {
     public void setUserId(String userId) {
         this.userId = userId;
     }
-    public void setProductName(String productName) {
-        this.productName = productName;
+    public void setProductId(String productId) {
+        this.productId = productId;
     }
     public void setQuantity(String quantity) {
         this.quantity = quantity;
