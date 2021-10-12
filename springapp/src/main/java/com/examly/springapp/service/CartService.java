@@ -19,7 +19,7 @@ public class CartService {
         cartRepository.save(cart);
     }
 
-    public boolean findCartById(String id) {
+    public boolean checkCartById(String id) {
         return cartRepository.existsById(id);
     }
 

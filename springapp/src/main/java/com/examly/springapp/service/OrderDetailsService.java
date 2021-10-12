@@ -10,28 +10,28 @@ import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @Service
-public class OrderService {
+public class OrderDetailsService {
     
     @Autowired
     private OrderDetailsRepository orderDetailsRepository;
     
-    public void addNewOrder(OrderDetailsModel data) {
+    public void addNewOrderDetails(OrderDetailsModel data) {
         orderDetailsRepository.save(data);
     }
 
-    public boolean findOrderById(String id) {
+    public boolean checkOrderDetailsById(String id) {
         return orderDetailsRepository.existsById(id);
     }
 
-    public void deleteOrderById(String id) {
+    public void deleteOrderDetailsById(String id) {
         orderDetailsRepository.deleteById(id);
     }
 
-    public OrderDetailsModel getOrderById(String id) {
+    public OrderDetailsModel getOrderDetailsById(String id) {
         return orderDetailsRepository.findById(id).get();
     }
 
-    public List<OrderDetailsModel> getAllOrders() {
+    public List<OrderDetailsModel> getAllOrderDetails() {
         List<OrderDetailsModel> orders = new ArrayList<>();
         orderDetailsRepository.findAll().forEach(orders::add);
         return orders;

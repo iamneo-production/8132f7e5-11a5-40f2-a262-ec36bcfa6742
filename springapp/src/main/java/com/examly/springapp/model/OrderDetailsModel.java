@@ -6,7 +6,7 @@ import javax.persistence.Id;
 @Entity
 public class OrderDetailsModel {
     @Id
-    private string id;
+    private String id;
     private String orderId;
     private String productId;
     private String quantity;

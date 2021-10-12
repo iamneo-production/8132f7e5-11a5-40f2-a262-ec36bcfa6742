@@ -19,7 +19,7 @@ public class UserService {
         userRepository.save(user);
     }
 
-    public boolean findUserById(String id) {
+    public boolean checkUserById(String id) {
         return userRepository.existsById(id);
     }
 

@@ -19,7 +19,7 @@ public class OrderService {
         orderRepository.save(order);
     }
 
-    public boolean findOrderById(String id) {
+    public boolean checkOrderById(String id) {
         return orderRepository.existsById(id);
     }
 

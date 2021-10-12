@@ -19,7 +19,7 @@ public class ProductService {
         productRepository.save(product);
     }
 
-    public boolean findProductById(String id) {
+    public boolean checkProductById(String id) {
         return productRepository.existsById(id);
     }
 
