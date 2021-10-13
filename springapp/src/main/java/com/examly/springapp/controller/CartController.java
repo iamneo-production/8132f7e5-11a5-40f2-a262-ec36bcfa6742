@@ -53,7 +53,6 @@ public class CartController {
                 CartModel tempCart = cartService.getCartById(id);
 
                 OrderModel tempOrder = new OrderModel();
-                tempOrder.setOrderId(""); // generate
                 tempOrder.setUserId(tempCart.getUserId());
                 tempOrder.setStatus("Confirmed");
                 

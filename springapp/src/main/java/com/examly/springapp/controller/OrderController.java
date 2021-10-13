@@ -21,7 +21,7 @@ public class OrderController {
     @GetMapping("/orders")
     public List<OrderModel> getOrders(@RequestBody String userId) {
         List<OrderModel> orderList = new ArrayList<>();
-        orderList.add(orderService.getOrderById(userId));
+        //orderList.add(orderService.getOrderById(userId));
         return orderList;
     }
 

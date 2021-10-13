@@ -6,23 +6,21 @@ import javax.persistence.GeneratedValue;
 
 @Entity
 public class OrderModel {
-    @Id
-    private String orderId;
+    @Id @GeneratedValue
+    private Long orderId;
     private String userId;
     private String status;
     
     public OrderModel() {
-        this.orderId = "";
         this.userId = "";
         this.status = "";
     }
-    public OrderModel(String orderId, String userId, String status) {
-        this.orderId = orderId;
+    public OrderModel(String userId, String status) {
         this.userId = userId;
         this.status = status;
     }
 
-    public String getOrderId() {
+    public Long getOrderId() {
         return this.orderId;
     }
     public String getUserId() {
@@ -32,9 +30,9 @@ public class OrderModel {
         return this.status;
     }
     
-    public void setOrderId(String orderId) {
+    /*public void setOrderId(String orderId) {
         this.orderId = orderId;
-    }
+    }*/
     public void setUserId(String userId) {
        this.userId = userId;
     }

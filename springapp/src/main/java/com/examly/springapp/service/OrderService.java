@@ -19,15 +19,15 @@ public class OrderService {
         orderRepository.save(order);
     }
 
-    public boolean checkOrderById(String id) {
+    public boolean checkOrderById(Long id) {
         return orderRepository.existsById(id);
     }
 
-    public void deleteOrderById(String id) {
+    public void deleteOrderById(Long id) {
         orderRepository.deleteById(id);
     }
 
-    public OrderModel getOrderById(String id) {
+    public OrderModel getOrderById(Long id) {
         return orderRepository.findById(id).get();
     }
 
