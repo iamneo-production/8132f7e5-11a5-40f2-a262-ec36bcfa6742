@@ -9,6 +9,8 @@ import com.examly.springapp.service.CartService;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @RestController
@@ -22,34 +24,33 @@ public class CartController {
         /**
          * 
          * 
-         * 
          */
         return "item added to cart.";
     }
 
-    @GetMapping("/cart/{id}")
-    public List<CartModel> showCart(String id) {    //cartTempModel
+    @GetMapping("/cart/{userId}")
+    public List<CartModel> showCart(@PathVariable String userId) {
         /**
          * 
-         * 
+         * cart filter by usr id
          * 
          */
         return new ArrayList();
     }
 
     @PostMapping("/cart/delete")
-    public String deleteCartItem(String id) {
-        /***
-         * 
-         * 
-         * 
-         */
-        return "cart dleted.";
+    public String deleteCartItem(@RequestBody String id) {
+        if(cartService.checkCartById(id)) {
+            cartService.deleteCartById(id);
+            return "cart delted";
+        }
+        return "Invalid request";
     }
 
     @PostMapping("/saveOrders")
-    public String saveProduct(String id) {
+    public String saveProduct(@RequestBody List<String> cartIdsList) {
         /**
+         * list of cart id
          * 
          * 
          * 
