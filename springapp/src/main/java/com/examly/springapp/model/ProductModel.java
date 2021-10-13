@@ -2,11 +2,12 @@ package com.examly.springapp.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-
+import javax.persistence.GeneratedValue;
+ 
 @Entity
 public class ProductModel {
-    @Id
-    private String productId;
+    @Id @GeneratedValue
+    private Long productId;
     private String imageURL;
     private String productName;
     private String price;
@@ -14,15 +15,13 @@ public class ProductModel {
     private String quantity;
 
     public ProductModel() {
-        this.productId = "";
         this.imageURL = "";
         this.productName = "";
         this.price = "";
         this.description = "";
         this.quantity = "";
     }
-    public ProductModel(String productId, String imageURL, String productName, String price, String description, String quantity) {
-        this.productId = productId;
+    public ProductModel(String imageURL, String productName, String price, String description, String quantity) {
         this.imageURL = imageURL;
         this.productName = productName;
         this.price = price;
@@ -30,7 +29,7 @@ public class ProductModel {
         this.quantity = quantity;
     }
 
-    public String getProductId() {
+    public Long getProductId() {
         return this.productId;
     }
     public String getImageURL() {
@@ -49,9 +48,9 @@ public class ProductModel {
         return this.quantity;
     }
     
-    public void setProductId(String productId) {
+    /*public void setProductId(String productId) {
         this.productId = productId;
-    }
+    }*/
     public void setImageURL(String imageURL) {
         this.imageURL = imageURL;
     }

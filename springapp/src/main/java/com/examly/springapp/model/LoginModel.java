@@ -1,7 +1,7 @@
 package com.examly.springapp.model;
 
 import org.springframework.stereotype.Component;
-
+ 
 @Component
 public class LoginModel {
     private String email;

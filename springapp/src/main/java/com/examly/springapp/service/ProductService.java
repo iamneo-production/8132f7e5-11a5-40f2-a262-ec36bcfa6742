@@ -19,15 +19,15 @@ public class ProductService {
         productRepository.save(product);
     }
 
-    public boolean checkProductById(String id) {
+    public boolean checkProductById(Long id) {
         return productRepository.existsById(id);
     }
 
-    public void deleteProductById(String id) {
+    public void deleteProductById(Long id) {
         productRepository.deleteById(id);
     }
 
-    public ProductModel getProductById(String id) {
+    public ProductModel getProductById(Long id) {
         return productRepository.findById(id).get();
     }
 
@@ -37,7 +37,7 @@ public class ProductService {
         return products;
     }
 
-    public void updateProductById(String id, ProductModel data) {
+    public void updateProductById(Long id, ProductModel data) {
         productRepository.updateProductById(id, data);
     }
 

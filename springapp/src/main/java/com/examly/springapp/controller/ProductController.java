@@ -41,7 +41,7 @@ public class ProductController {
     }
     
     @GetMapping("/admin/delete/{id}")
-    public String productDelete(@PathVariable String id) {
+    public String productDelete(@PathVariable Long id) {
         // delete the product with id - id
         if(productService.checkProductById(id)) {
             productService.deleteProductById(id);
@@ -51,7 +51,7 @@ public class ProductController {
     }
 
     @GetMapping("/admin/productEdit/{id}")
-    public ProductModel productEditData(@PathVariable String id) {
+    public ProductModel productEditData(@PathVariable Long id) {
         // get the product details with id - id
         if(productService.checkProductById(id)) {
             return productService.getProductById(id);
@@ -60,7 +60,7 @@ public class ProductController {
     }
 
     @PostMapping("/admin/productEdit/{id}")
-    public String productEditSave(@RequestBody ProductModel data, @PathVariable String id) {
+    public String productEditSave(@RequestBody ProductModel data, @PathVariable Long id) {
         // save the product with id - id
         if(productService.checkProductById(id)) {
             productService.updateProductById(id, data);
