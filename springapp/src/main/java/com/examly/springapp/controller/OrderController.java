@@ -18,10 +18,10 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
-    @PostMapping("/orders")
-    public List<OrderModel> getOrders(@RequestBody String id) {
+    @GetMapping("/orders")
+    public List<OrderModel> getOrders(@RequestBody String userId) {
         List<OrderModel> orderList = new ArrayList<>();
-        orderList.add(orderService.getOrderById(id));
+        orderList.add(orderService.getOrderById(userId));
         return orderList;
     }
 
@@ -32,14 +32,7 @@ public class OrderController {
     }
 
     @GetMapping("/admin/orders")
-    public List<OrderModel> getUserProducts(/*String id*/) {
-        /**
-         * 
-         * 
-         * 
-         * 
-         * 
-         */
-        return new ArrayList<OrderModel>();
+    public List<OrderModel> getUserOrders() {
+        return orderService.getAllOrders();
     }
 }
