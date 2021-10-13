@@ -1,44 +1,44 @@
 package com.examly.springapp.model;
+import com.examly.springapp.model.OrderDetailsCompositeKey;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
  
 @Entity
+@IdClass(OrderDetailsCompositeKey.class)
 public class OrderDetailsModel {
     @Id
-    private String id;
-    private String orderId;
-    private String productId;
-    private String quantity;
+    private Long orderId;
+    @Id
+    private Long productId;
+    private Long quantity;
     
-    public OrderDetailsModel() {
-        this.orderId = "";
-        this.productId = "";
-        this.quantity = "";
-    }
-    public OrderDetailsModel(String orderId, String productId, String quantity) {
+    public OrderDetailsModel() {}
+
+    public OrderDetailsModel(Long orderId, Long productId, Long quantity) {
         this.orderId = orderId;
         this.productId = productId;
         this.quantity = quantity;
     }
 
-    public String getOrderId() {
+    public Long getOrderId() {
         return this.orderId;
     }
-    public String getProductId() {
+    public Long getProductId() {
         return this.productId;
     }
-    public String getQuantity() {
+    public Long getQuantity() {
         return this.quantity;
     }
     
-    public void setOrderId(String orderId) {
+    public void setOrderId(Long orderId) {
         this.orderId = orderId;
     }
-    public void setProductId(String productId) {
+    public void setProductId(Long productId) {
         this.productId = productId;
     }
-    public void setQuantity(String quantity) {
+    public void setQuantity(Long quantity) {
         this.quantity = quantity;
     }
 }
