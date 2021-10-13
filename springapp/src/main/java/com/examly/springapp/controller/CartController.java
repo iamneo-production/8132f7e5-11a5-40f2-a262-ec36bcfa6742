@@ -38,7 +38,7 @@ public class CartController {
     }
 
     @PostMapping("/cart/delete")
-    public String deleteCartItem(@RequestBody String id) {
+    public String deleteCartItem(@RequestBody Long id) {
         if(cartService.checkCartById(id)) {
             cartService.deleteCartById(id);
             return "cart delted";
@@ -47,8 +47,8 @@ public class CartController {
     }
 
     @PostMapping("/saveOrders")
-    public String saveProduct(@RequestBody List<String> cartIdsList) {
-        for(String id: cartIdsList) {
+    public String saveProduct(@RequestBody List<Long> cartIdsList) {
+        for(Long id: cartIdsList) {
             if(cartService.checkCartById(id)) {
                 CartModel tempCart = cartService.getCartById(id);
 

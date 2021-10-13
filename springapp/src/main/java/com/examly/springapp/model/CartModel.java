@@ -2,29 +2,25 @@ package com.examly.springapp.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
  
 @Entity
 public class CartModel {
-    @Id
-    private String cartId;
+    @Id @GeneratedValue
+    private Long cartId;
     private String userId;
     private String productId;
     private String quantity;
 
-    public CartModel() {
-        this.cartId = "";
-        this.userId = "";
-        this.productId = "";
-        this.quantity = "";
-    }
-    public CartModel(String cartId, String userId, String productId, String quantity) {
-        this.cartId = cartId;
+    public CartModel() {}
+    
+    public CartModel(String userId, String productId, String quantity) {
         this.userId = userId;
         this.productId = productId;
         this.quantity = quantity;
     }
 
-    public String getCartId() {
+    public Long getCartId() {
         return this.cartId;
     }
     public String getUserId() {
@@ -37,7 +33,7 @@ public class CartModel {
         return this.quantity;
     }
     
-    public void setCartId(String cartId) {
+    public void setCartId(Long cartId) {
         this.cartId = cartId;
     }
     public void setUserId(String userId) {

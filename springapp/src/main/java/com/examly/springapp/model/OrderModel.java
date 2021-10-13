@@ -30,9 +30,9 @@ public class OrderModel {
         return this.status;
     }
     
-    /*public void setOrderId(String orderId) {
+    public void setOrderId(Long orderId) {
         this.orderId = orderId;
-    }*/
+    }
     public void setUserId(String userId) {
        this.userId = userId;
     }

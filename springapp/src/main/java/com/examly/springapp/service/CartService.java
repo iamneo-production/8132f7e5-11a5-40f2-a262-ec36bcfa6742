@@ -19,15 +19,15 @@ public class CartService {
         cartRepository.save(cart);
     }
 
-    public boolean checkCartById(String id) {
+    public boolean checkCartById(Long id) {
         return cartRepository.existsById(id);
     }
 
-    public void deleteCartById(String id) {
+    public void deleteCartById(Long id) {
         cartRepository.deleteById(id);
     }
 
-    public CartModel getCartById(String id) {
+    public CartModel getCartById(Long id) {
         return cartRepository.findById(id).get();
     }
 

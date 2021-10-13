@@ -48,9 +48,9 @@ public class ProductModel {
         return this.quantity;
     }
     
-    /*public void setProductId(String productId) {
+    public void setProductId(Long productId) {
         this.productId = productId;
-    }*/
+    }
     public void setImageURL(String imageURL) {
         this.imageURL = imageURL;
     }
