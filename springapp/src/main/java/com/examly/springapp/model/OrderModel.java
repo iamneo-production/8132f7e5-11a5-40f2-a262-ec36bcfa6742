@@ -11,10 +11,8 @@ public class OrderModel {
     private String userId;
     private String status;
     
-    public OrderModel() {
-        this.userId = "";
-        this.status = "";
-    }
+    public OrderModel() {}
+    
     public OrderModel(String userId, String status) {
         this.userId = userId;
         this.status = status;

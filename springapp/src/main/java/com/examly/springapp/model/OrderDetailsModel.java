@@ -12,11 +12,11 @@ public class OrderDetailsModel {
     private Long orderId;
     @Id
     private Long productId;
-    private Long quantity;
+    private Integer quantity;
     
     public OrderDetailsModel() {}
 
-    public OrderDetailsModel(Long orderId, Long productId, Long quantity) {
+    public OrderDetailsModel(Long orderId, Long productId, Integer quantity) {
         this.orderId = orderId;
         this.productId = productId;
         this.quantity = quantity;
@@ -28,7 +28,7 @@ public class OrderDetailsModel {
     public Long getProductId() {
         return this.productId;
     }
-    public Long getQuantity() {
+    public Integer getQuantity() {
         return this.quantity;
     }
     
@@ -38,7 +38,7 @@ public class OrderDetailsModel {
     public void setProductId(Long productId) {
         this.productId = productId;
     }
-    public void setQuantity(Long quantity) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 }

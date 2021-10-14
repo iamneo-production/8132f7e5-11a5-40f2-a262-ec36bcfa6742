@@ -13,15 +13,8 @@ public class UserModel {
     private Boolean active;
     private String role;
 
-    public UserModel() {
-        this.email = "";
-        this.password = "";
-        this.userName = "";
-        this.mobileNumber = "";
-        this.active = false;
-        this.role = "";
-    }
-    
+    public UserModel() {}
+        
     public UserModel(String email, String password, String userName, String mobileNumber, Boolean active, String role) {
         this.email = email;
         this.password = password;

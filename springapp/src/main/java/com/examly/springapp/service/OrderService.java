@@ -31,10 +31,17 @@ public class OrderService {
         return orderRepository.findById(id).get();
     }
 
+    public List<OrderModel> getOrdersByUserId(String userId) {
+        return orderRepository.getOrdersByUserId(userId);
+    }
+
     public List<OrderModel> getAllOrders() {
         List<OrderModel> orders = new ArrayList<>();
         orderRepository.findAll().forEach(orders::add);
         return orders;
     }
 
+    public void updateOrderById(Long id, OrderModel order) {
+        orderRepository.updateOrderById(id, order);
+    }
 }

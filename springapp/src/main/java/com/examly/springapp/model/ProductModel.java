@@ -10,18 +10,13 @@ public class ProductModel {
     private Long productId;
     private String imageURL;
     private String productName;
-    private String price;
+    private Float price;
     private String description;
-    private String quantity;
+    private Integer quantity;
 
-    public ProductModel() {
-        this.imageURL = "";
-        this.productName = "";
-        this.price = "";
-        this.description = "";
-        this.quantity = "";
-    }
-    public ProductModel(String imageURL, String productName, String price, String description, String quantity) {
+    public ProductModel() {}
+    
+    public ProductModel(String imageURL, String productName, Float price, String description, Integer quantity) {
         this.imageURL = imageURL;
         this.productName = productName;
         this.price = price;
@@ -38,13 +33,13 @@ public class ProductModel {
     public String getProductName() {
         return this.productName;
     }
-    public String getPrice() {
+    public Float getPrice() {
         return this.price;
     }
     public String getDescription() {
         return this.description;
     }
-    public String getQuantity() {
+    public Integer getQuantity() {
         return this.quantity;
     }
     
@@ -57,13 +52,13 @@ public class ProductModel {
     public void setProductName(String productName) {
         this.productName = productName;
     }
-    public void setPrice(String price) {
+    public void setPrice(Float price) {
         this.price = price;
     }
     public void setDescription(String description) {
         this.description = description;
     }
-    public void setQuantity(String quantity) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 }

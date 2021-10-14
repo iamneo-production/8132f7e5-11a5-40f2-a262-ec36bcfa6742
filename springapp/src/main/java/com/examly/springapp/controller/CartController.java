@@ -7,6 +7,7 @@ import com.examly.springapp.model.CartModel;
 import com.examly.springapp.model.OrderModel;
 import com.examly.springapp.model.OrderDetailsModel;
 import com.examly.springapp.service.CartService;
+import com.examly.springapp.service.OrderService;
 
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,6 +21,9 @@ public class CartController {
 
     @Autowired
     private CartService cartService;
+
+    @Autowired
+    private OrderService orderService;
 
     @PostMapping("/cart/add")
     public String addToCart(@RequestBody CartModel cart) {
@@ -48,17 +52,20 @@ public class CartController {
 
     @PostMapping("/saveOrders")
     public String saveProduct(@RequestBody List<Long> cartIdsList) {
-        for(Long id: cartIdsList) {
-            if(cartService.checkCartById(id)) {
-                CartModel tempCart = cartService.getCartById(id);
+        if(cartIdsList.isEmpty()) {
+            return "Invalid Request.";
+        }
 
-                OrderModel tempOrder = new OrderModel();
-                tempOrder.setUserId(tempCart.getUserId());
-                tempOrder.setStatus("Confirmed");
-                
+        CartModel tempCart = cartService.getCartById(cartIdsList.get(0));
+        OrderModel tempOrder = new OrderModel(tempCart.getUserId(), "Confirmed");
+
+        orderService.addNewOrder(tempOrder);
+        
+        /*for(Long id: cartIdsList) {
+            if(cartService.checkCartById(id)) {
                 OrderDetailsModel tempOrderDetail = new OrderDetailsModel();
             }
-        }
+        }*/
         return "product saved from cart to order.";
     }
 }
