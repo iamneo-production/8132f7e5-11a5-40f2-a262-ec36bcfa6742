@@ -36,5 +36,9 @@ public class CartService {
         cartRepository.findAll().forEach(carts::add);
         return carts;
     }
+
+    public List<CartModel> getCartsByUserId(String userId) {
+        return cartRepository.getCartsByUserId(userId);
+    }
 }
 

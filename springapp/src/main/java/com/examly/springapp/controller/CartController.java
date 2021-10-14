@@ -4,10 +4,15 @@ import java.util.List;
 import java.util.ArrayList;
 
 import com.examly.springapp.model.CartModel;
+import com.examly.springapp.model.ProductModel;
+import com.examly.springapp.model.UserModel;
 import com.examly.springapp.model.OrderModel;
 import com.examly.springapp.model.OrderDetailsModel;
 import com.examly.springapp.service.CartService;
 import com.examly.springapp.service.OrderService;
+import com.examly.springapp.service.UserService;
+import com.examly.springapp.service.ProductService;
+import com.examly.springapp.service.OrderDetailsService;
 
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,25 +25,35 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class CartController {
 
     @Autowired
+    private UserService userService;
+
+    @Autowired
+    private ProductService productService;
+
+    @Autowired
     private CartService cartService;
 
     @Autowired
     private OrderService orderService;
+    
+    @Autowired
+    private OrderDetailsService orderDetailsService;
 
     @PostMapping("/cart/add")
     public String addToCart(@RequestBody CartModel cart) {
+        if(!userService.checkUserById(cart.getUserId()) || cart.getQuantity() < 0 || !productService.checkProductById(cart.getProductId())) {
+            return "Invalid request";
+        }
         cartService.addNewCart(cart);
         return "item added to cart.";
     }
 
     @GetMapping("/cart/{userId}")
     public List<CartModel> showCart(@PathVariable String userId) {
-        /**
-         * 
-         * cart filter by usr id
-         * 
-         */
-        return new ArrayList();
+        if(!userService.checkUserById(userId)) {
+            return new ArrayList<CartModel>();
+        }
+        return cartService.getCartsByUserId(userId);
     }
 
     @PostMapping("/cart/delete")
@@ -56,16 +71,40 @@ public class CartController {
             return "Invalid Request.";
         }
 
-        CartModel tempCart = cartService.getCartById(cartIdsList.get(0));
-        OrderModel tempOrder = new OrderModel(tempCart.getUserId(), "Confirmed");
+        String userId = "";
+        if(cartService.checkCartById(cartIdsList.get(0))) {
+            CartModel cart = cartService.getCartById(cartIdsList.get(0));
+            userId = cart.getUserId();
+        } else {
+            return "Invalid request";
+        }
 
-        orderService.addNewOrder(tempOrder);
-        
-        /*for(Long id: cartIdsList) {
-            if(cartService.checkCartById(id)) {
-                OrderDetailsModel tempOrderDetail = new OrderDetailsModel();
+        OrderModel order = new OrderModel(userId, "processing");
+        orderService.addNewOrder(order);
+        List<OrderModel> orders = new ArrayList<OrderModel>(orderService.getOrdersByUserId(userId));
+        order = orders.get(orders.size() - 1);
+
+        for(Long cartId: cartIdsList) {
+            if(cartService.checkCartById(cartId)) {
+                CartModel cart = cartService.getCartById(cartId);
+                if(productService.checkProductById(cart.getProductId())) {
+                    ProductModel product = productService.getProductById(cart.getProductId());
+                    if(cart.getQuantity() > product.getQuantity()) {
+                        return "that much quantity is not available";
+                    } else {
+                        product.setQuantity(product.getQuantity()-cart.getQuantity());
+                        productService.updateProductById(product.getProductId(), product);
+                    }
+
+                    OrderDetailsModel orderDetails = new OrderDetailsModel(order.getOrderId(), product.getProductId(), cart.getQuantity());
+                    orderDetailsService.addNewOrderDetails(orderDetails);
+                }
             }
-        }*/
+        }
+        
+        order.setStatus("ordered");
+        orderService.updateOrderById(order.getOrderId(), order);
+        
         return "product saved from cart to order.";
     }
 }
