@@ -61,4 +61,11 @@ public class ProductModel {
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
+
+    public boolean isValid() {
+        if( this.imageURL == "" || this.productName == "" || this.price < 0 || this.description == "" || this.quantity < 0) {
+            return false;
+        }
+        return true;
+    }
 }

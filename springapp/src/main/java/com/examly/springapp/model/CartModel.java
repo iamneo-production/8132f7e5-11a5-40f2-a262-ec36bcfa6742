@@ -9,12 +9,12 @@ public class CartModel {
     @Id @GeneratedValue
     private Long cartId;
     private String userId;
-    private String productId;
-    private String quantity;
+    private Long productId;
+    private Integer quantity;
 
     public CartModel() {}
     
-    public CartModel(String userId, String productId, String quantity) {
+    public CartModel(String userId, Long productId, Integer quantity) {
         this.userId = userId;
         this.productId = productId;
         this.quantity = quantity;
@@ -26,10 +26,10 @@ public class CartModel {
     public String getUserId() {
         return this.userId;
     }
-    public String getProductId() {
+    public Long getProductId() {
         return this.productId;
     }
-    public String getQuantity() {
+    public Integer getQuantity() {
         return this.quantity;
     }
     
@@ -39,10 +39,10 @@ public class CartModel {
     public void setUserId(String userId) {
         this.userId = userId;
     }
-    public void setProductId(String productId) {
+    public void setProductId(Long productId) {
         this.productId = productId;
     }
-    public void setQuantity(String quantity) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
     
